@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>註&emsp;&emsp;冊</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+	<div class="container" style="max-width: 600px;margin-top: 50px;">
+		<h3 class="pager-header">註&emsp;冊</h3>
+		<div class="well">
+			<form action="/register" method="post" th:object="${userForm}">
+				<div class="form-group">
+					<label for="usernameId">用戶帳號</label>
+					<input type="text" name="username" id="usernameId" class="form-control" th:field="*{username}">
+					<p class="form-control-static text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"/>
+				</div>
+				<div class="form-group">
+					<label for="usernameId">暱&emsp;&emsp;稱</label>
+					<input type="text" name="nickname" id="nicknameId" class="form-control" th:field="*{nickname}">
+					<p class="form-control-static text-danger" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"/>
+				</div>
+				<div class="form-group">
+					<label for="passwordId">密&emsp;&emsp;碼</label>
+					<input type="password" name="password" id="passwordId" class="form-control" th:field="*{password}">
+					<p class="form-control-static text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"/>
+				</div>
+				<div class="form-group">
+					<label for="confirmPasswordId">確認密碼</label>
+					<input type="password" name="confirmPassword" id="confirmPasswordId" class="form-control" th:field="*{confirmPassword}">
+					<p class="form-control-static text-danger" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"/>
+				</div>
+				<div class="form-group">
+					<label for="emailId">E-MAIL</label>
+					<input type="text" name="email" id="emailId" class="form-control" th:field="*{email}">
+					<p class="form-control-static text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"/>
+				</div>
+				<div class="form-group">
+					<label for="phoneId">手機號碼</label>
+					<input type="text" name="phone" id="phoneId" class="form-control" th:field="*{phone}">
+					<p class="form-control-static text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"/>
+				</div>
+				<p class="text-center">
+					<button type="submit" class="btn btn-primary">註冊</button>
+				</p>
+			</form>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

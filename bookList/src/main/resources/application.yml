@@ -1,0 +1,27 @@
+server:
+ port: 80
+
+spring:
+ datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/bookList?useUnicode=true & characterEncoding=UTF-8 & serverTimezone=GMT%2B8
+  username: root
+  password: root
+ jpa:
+  hibernate:
+   ddl-auto: update
+  show-sql: true
+# profiles: 
+#  active: dev #使用後墜為dev的設定檔
+ 
+thymeleaf:
+ cache: false
+ suffix: .html
+ encoding: UTF-8
+
+logging: 
+ level: 
+  root: info #整個project的級別，默認為info
+#  com.deng: debug #指定packge的級別
+# file: log/my.log
+ path: /logfile

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>首&emsp;&emsp;頁</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+	<div class="container" style="max-width: 600px;margin-top: 50px;">
+		<h3 class="pager-header">首&emsp;&emsp;頁</h3>
+		<div class="jumbotron">
+			<h1>歡迎</h1>
+			<p th:text="${session.user.username}"></p>
+			<p><a class="btn btn-primary" th:href="@{/api/books}">書單列表</a></p>
+		</div>
+		<a class="btn btn-warning" th:href="@{/logout}">登出</a>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
