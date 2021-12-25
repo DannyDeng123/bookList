@@ -17,8 +17,8 @@
 			<span th:text="${message}">信息提交成功</span>
 		</div>
 		<p class="text-right">
-			<a th:href="@{/index}" class="btn btn-primary">回首頁</a>
-			<a th:href="@{/api/books/input}" class="btn btn-primary">新增</a>
+			<a th:href="@{/bookList/index}" class="btn btn-primary">回首頁</a>
+			<a th:href="@{/bookList/books/input}" class="btn btn-primary">新增</a>
 		</p>
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
@@ -34,7 +34,7 @@
 			<tbody>
 				<tr th:each="book, iterStat: ${books.content}">  <!-- th:class="${iterStat.even} ? 'bg-success'" -->
 					<td th:text="${iterStat.count}"></td>
-					<td><a th:text="${book.name}" th:href="@{'/api/book/' + ${book.id}}"></a></td>
+					<td><a th:text="${book.name}" th:href="@{'/bookList/book/' + ${book.id}}"></a></td>
 					<td th:text="${book.author}"></td>
 					<td th:text="${book.description}"></td>
 					<td th:switch="*{book.status}">
@@ -43,15 +43,15 @@
 						<span th:case="2">已讀</span>
 					</td>
 					<td>
-						<a th:href="@{'/api/books/'+${book.id}+'/edit'}">更新</a>
+						<a th:href="@{'/bookList/books/'+${book.id}+'/edit'}">更新</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 		<nav>
 			<ul class="pager">
-				<li class="previous"><a th:href="@{'/api/books?page='+${books.number - 1}}" th:unless="${books.first}">上一頁</a></li>
-				<li class="next"><a th:href="@{'/api/books?page='+${books.number + 1}}" th:unless="${books.last}">下一頁</a></li>
+				<li class="previous"><a th:href="@{'/bookList/books?page='+${books.number - 1}}" th:unless="${books.first}">上一頁</a></li>
+				<li class="next"><a th:href="@{'/bookList/books?page='+${books.number + 1}}" th:unless="${books.last}">下一頁</a></li>
 			</ul>
 		</nav>
 	</div>	

@@ -19,7 +19,7 @@ import com.deng.booklist.entity.Book;
 import com.deng.booklist.service.BookService;
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/bookList")
 public class BookController {
 	@Autowired
 	private BookService bookService;
@@ -89,7 +89,7 @@ public class BookController {
 		if(book1 != null) {
 			attributes.addFlashAttribute("message", "《" + book1.getName() + "》 信息提交成功");
 		}
-		return "redirect:/api/books";
+		return "redirect:/bookList/books";
 	}
 	
 	/**

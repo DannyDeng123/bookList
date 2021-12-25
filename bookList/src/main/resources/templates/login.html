@@ -11,7 +11,7 @@
 	<div class="container" style="max-width: 600px;margin-top: 50px;">
 		<h3 class="pager-header">登&emsp;入</h3>
 		<div class="well">
-			<form action="/login" method="post">
+			<form action="/bookList/login" method="post">
 				<div class="form-group">
 					<label for="usernameId">用戶名稱</label>
 					<input type="text" name="username" id="usernameId" class="form-control">
@@ -21,7 +21,7 @@
 					<input type="password" name="password" id="passwordId" class="form-control">
 				</div>
 				<p class="text-center">
-					<a class="btn btn-default" th:href="@{/register}">註冊</a>
+					<a class="btn btn-default" th:href="@{/bookList/register}">註冊</a>
 					<button type="submit" class="btn btn-primary">登入</button>
 				</p>
 			</form>

@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.deng.booklist.entity.User;
@@ -19,6 +20,7 @@ import com.deng.booklist.form.UserForm;
 import com.deng.booklist.repository.UserRepository;
 
 @Controller
+@RequestMapping("/bookList")
 public class CommonController {
 	@Autowired
 	private UserRepository userRepository;
@@ -67,7 +69,7 @@ public class CommonController {
 		}
 		User user = userForm.convertToUser();
 		userRepository.save(user);
-		return "redirect:/login";
+		return "redirect:/bookList/login";
 	}
 	
 	@GetMapping("/index")

@@ -12,7 +12,7 @@
 	
 		<h2 class="page-header">新增書單</h2>
 		<div class="well">
-			<form th:action="@{/api/books}" th:object="${book}" method="post">
+			<form th:action="@{/bookList/books}" th:object="${book}" method="post">
 				<input type="hidden" th:value="*{id}" name="id">
 				<div class="form-group">
 					<label for="nameId">書名</label>

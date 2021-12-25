@@ -11,7 +11,7 @@
 	<div class="container" style="max-width: 600px;margin-top: 50px;">
 		<h3 class="pager-header">註&emsp;冊</h3>
 		<div class="well">
-			<form action="/register" method="post" th:object="${userForm}">
+			<form action="/bookList/register" method="post" th:object="${userForm}">
 				<div class="form-group">
 					<label for="usernameId">用戶帳號</label>
 					<input type="text" name="username" id="usernameId" class="form-control" th:field="*{username}">
